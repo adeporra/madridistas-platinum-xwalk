@@ -1,10 +1,28 @@
+/* Center FAQ section heading and constrain width */
+.accordion-container > .default-content-wrapper,
+.accordion-container > .accordion-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accordion-container > .default-content-wrapper {
+  text-align: center;
+}
+
+.accordion-container > .accordion-wrapper {
+  text-align: left;
+}
+
 .accordion details {
-  border: 1px solid #dadada;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--light-color);
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 .accordion details p {
@@ -55,11 +73,12 @@
   padding: 0 16px;
 }
 
-.accordion details:not([open]) .accordion-item-body {
-  display: none;
+.accordion details[open] .accordion-item-body {
+  border-top: 1px solid rgb(255 255 255 / 15%);
+  background-color: var(--background-color);
 }
 
-.accordion details[open] .accordion-item-body {
-  border-top: 1px solid #dadada;
-  background-color: var(--background-color);
+/* White link for "Consultar todas las preguntas frecuentes" */
+.accordion-container > .default-content-wrapper a {
+  color: #fff;
 }

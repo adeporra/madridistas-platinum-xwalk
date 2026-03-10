@@ -1,37 +1,403 @@
+/* Hero block — centered layout matching original platinum design */
+
+/* Remove section wrapper constraints for hero */
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
 }
 
+.hero-container {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Hero block base */
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 24px 0;
+  overflow: hidden;
 }
 
-.hero h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero picture {
+/* Dark gradient overlay on top of background image */
+.hero::after {
+  content: '';
   position: absolute;
-  z-index: -1;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
+  background: linear-gradient(
+    180deg,
+    rgb(10 10 10 / 30%) 0%,
+    rgb(10 10 10 / 60%) 20%,
+    rgb(10 10 10 / 85%) 40%,
+    rgb(10 10 10 / 100%) 60%
+  );
+  z-index: 0;
+  pointer-events: none;
 }
 
-.hero img {
+/* All direct children above overlay */
+.hero > div {
+  position: relative;
+  z-index: 1;
+  max-width: 732px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Heading */
+.hero h1 {
+  margin: 0;
+  color: rgb(255 255 255 / 95%);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+}
+
+.hero h2 {
+  margin: 0;
+  color: rgb(255 255 255 / 95%);
+  font-weight: 700;
+  line-height: 1.06;
+}
+
+/* Description paragraph */
+.hero p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  line-height: 1.25;
+  color: var(--light-gray);
+  max-width: 732px;
+}
+
+/* Background image row — positioned behind content */
+.hero > .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  max-width: unset;
+  overflow: hidden;
+}
+
+.hero > .hero-bg div {
+  height: 100%;
+}
+
+.hero > .hero-bg p {
+  margin: 0;
+  display: block;
+  height: 100%;
+  max-width: unset;
+}
+
+.hero > .hero-bg picture {
+  margin: 0;
+  display: block;
+  height: 100%;
+}
+
+.hero > .hero-bg img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
+/* Content row */
+.hero > .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero > .hero-content > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Button container */
+.hero .hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.hero .hero-buttons p.button-wrapper {
+  margin: 0;
+  width: 100%;
+}
+
+/* Hero-specific button overrides */
+.hero a.button:any-link {
+  width: 100%;
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: 400;
+  min-height: 56px;
+  white-space: normal;
+}
+
+/* Primary button — solid white, black text */
+.hero a.button.primary {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+}
+
+.hero a.button.primary:hover,
+.hero a.button.primary:focus-visible {
+  background: #f0f0f0;
+  border-color: #f0f0f0;
+  color: #000;
+}
+
+/* Secondary button — transparent with white border, white text */
+.hero a.button.secondary {
+  background: transparent;
+  border-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  color: #fff;
+}
+
+.hero a.button.secondary:hover,
+.hero a.button.secondary:focus-visible {
+  background: rgb(255 255 255 / 10%);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Product image rows — stacked, centered, overlapping */
+.hero > .hero-product {
+  max-width: 480px;
+  margin-top: 20px;
+}
+
+.hero > .hero-product div {
+  display: flex;
+  justify-content: center;
+}
+
+.hero > .hero-product p {
+  margin: 0;
+}
+
+.hero > .hero-product img {
+  width: auto;
+  height: auto;
+  max-width: 280px;
+  object-fit: contain;
+}
+
+/* Jersey image — slightly larger + floating animation */
+.hero > .hero-product:nth-child(3) {
+  animation: hero-float 4s ease-in-out infinite;
+  margin-top: 80px !important;
+  position: relative;
+  z-index: 10 !important;
+}
+
+/* Pause animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero > .hero-product:nth-child(3) {
+    animation: none;
+  }
+}
+
+.hero > .hero-product:nth-child(3) img {
+  max-width: 300px;
+}
+
+/* Card image — overlaps jersey + 3D tilt effect */
+.hero > .hero-product:nth-child(4) {
+  margin-top: -220px !important;
+  transition: transform 0.2s ease-out;
+  position: relative;
+  z-index: 20 !important;
+  perspective: 500px;
+}
+
+.hero > .hero-product:nth-child(4) > div {
+  transition: transform 0.2s ease-out;
+  transform-style: preserve-3d;
+}
+
+.hero > .hero-product:nth-child(4):hover > div {
+  will-change: transform;
+}
+
+.hero > .hero-product:nth-child(4) img {
+  max-width: 380px;
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Responsive — tablet */
+@media (width >= 600px) {
+  .hero {
+    padding: 50px 32px 0;
+  }
+
+  .hero p {
+    font-size: var(--body-font-size-m);
+  }
+
+  .hero .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+  }
+
+  .hero .hero-buttons p.button-wrapper {
+    width: auto;
+  }
+
+  .hero a.button:any-link {
+    width: auto;
+    padding: 16px 32px;
+  }
+
+  .hero > .hero-product:nth-child(3) img {
+    max-width: 360px;
+  }
+
+  .hero > .hero-product:nth-child(4) img {
+    max-width: 460px;
+  }
+}
+
+/* Left-aligned hero variant — all viewports */
+/* stylelint-disable no-descending-specificity */
+.hero.left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero.left > div {
+  margin: 0;
+}
+
+.hero.left::after {
+  display: none;
+}
+
+/* stylelint-enable no-descending-specificity */
+
+/* Responsive — desktop */
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    padding: 50px 40px 0;
   }
+
+  .hero p {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  .hero > .hero-product:nth-child(3) img {
+    max-width: 420px;
+  }
+
+  .hero > .hero-product:nth-child(4) {
+    margin-top: -190px !important;
+  }
+
+  .hero > .hero-product:nth-child(4) img {
+    max-width: 540px;
+  }
+
+  /* Left-aligned hero variant (e.g. "No es para todos") — overlaid layout */
+  .hero.left {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 500px;
+    padding: 0;
+    overflow: clip;
+  }
+
+  .hero.left > .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding: 80px 0 80px max(40px, calc((100vw - 1240px) / 2));
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .hero.left > .hero-content > div {
+    align-items: flex-start;
+  }
+
+  .hero.left > .hero-bg {
+    position: absolute;
+    inset: -60px 0;
+    z-index: 0;
+    max-width: unset;
+    margin-left: 0;
+  }
+
+  .hero.left::after {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      rgb(10 10 10 / 90%) 0%,
+      rgb(10 10 10 / 70%) 35%,
+      rgb(10 10 10 / 30%) 60%,
+      transparent 80%
+    );
+    z-index: 1;
+  }
+
+  .hero.left h2 {
+    font-size: 56px;
+    line-height: 1.1;
+  }
+
+  .hero.left p {
+    max-width: 550px;
+  }
+
+  .hero.left > .hero-bg p {
+    max-width: unset;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* CTA hero ("Únete ya") — lighter gradient so background image stays visible */
+.hero.cta {
+  padding: 120px 24px;
+  min-height: 360px;
+  justify-content: center;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.hero.cta::after {
+  background: linear-gradient(
+    180deg,
+    rgb(10 10 10 / 40%) 0%,
+    rgb(10 10 10 / 55%) 50%,
+    rgb(10 10 10 / 70%) 100%
+  );
+}
+
+.hero.cta > .hero-content {
+  max-width: 1000px;
 }

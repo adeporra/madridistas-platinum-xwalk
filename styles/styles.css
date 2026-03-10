@@ -234,8 +234,8 @@ button.button {
   padding: var(--button-padding);
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 400;
-  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  font-size: var(--body-font-size-m);
   line-height: 1.25;
   letter-spacing: var(--heading-letter-spacing);
   text-align: center;
@@ -385,4 +385,8 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+main .section.center {
+  text-align: center;
 }

@@ -1,4 +1,359 @@
+/* Pricing Plans block */
+.pricing-plans-container {
+  margin: 0;
+  padding: 20px 0 80px;
+}
+
+.pricing-plans-container > .default-content-wrapper > h2 {
+  text-align: center;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+
 .pricing-plans-container .pricing-plans-wrapper {
-  max-width: unset;
-  padding: 0;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 96px;
+}
+
+.pricing-plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Toggle pill */
+.pricing-plans .pricing-toggle {
+  display: flex;
+  align-items: center;
+  background-color: #222326;
+  border-radius: 99px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.pricing-plans .pricing-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 99px;
+  background: transparent;
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-width: 140px;
+}
+
+.pricing-plans .pricing-tab.active {
+  background-color: #fff;
+  color: #29395a;
+}
+
+.pricing-plans .pricing-badge {
+  display: inline-block;
+  background-color: #6c5ce7;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 99px;
+  margin-top: 2px;
+}
+
+/* Two-column content area */
+.pricing-plans .pricing-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Column headers */
+.pricing-plans .pricing-col-header {
+  background: transparent;
+  padding: 16px 24px;
+  text-align: center;
+}
+
+.pricing-plans .pricing-col-header h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Left column: shirts */
+.pricing-plans .pricing-col-shirts {
+  background: transparent;
+}
+
+/* Cards container */
+.pricing-plans .pricing-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+/* Individual pricing card */
+.pricing-plans .pricing-card {
+  padding: 24px;
+  text-align: center;
+  color: #0a0a0a;
+  background-color: #fff;
+}
+
+.pricing-plans .pricing-card-dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.pricing-plans .pricing-card h4 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  font-weight: 600;
+  color: inherit;
+}
+
+.pricing-plans .pricing-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: inherit;
+  margin-bottom: 16px;
+}
+
+.pricing-plans .pricing-original {
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: line-through;
+  opacity: 0.6;
+  margin-right: 4px;
+}
+
+.pricing-plans .pricing-card-image {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.pricing-plans .pricing-card-image img {
+  max-width: 240px;
+  height: auto;
+  object-fit: contain;
+}
+
+.pricing-plans .pricing-card-desc {
+  margin: 12px 0 0;
+  font-size: var(--body-font-size-s);
+  line-height: 1.4;
+}
+
+.pricing-plans .pricing-card .pricing-card-desc {
+  color: #555;
+}
+
+.pricing-plans .pricing-card-dark .pricing-card-desc {
+  color: rgb(255 255 255 / 70%);
+}
+
+/* Right column: benefits carousel */
+.pricing-plans .pricing-col-benefits {
+  display: flex;
+  flex-direction: column;
+  background: rgb(43 43 43);
+}
+
+.pricing-plans .pricing-carousel-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 12px;
+  flex: 1;
+}
+
+.pricing-plans .pricing-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.4s ease;
+}
+
+/* Benefit card */
+.pricing-plans .pricing-benefit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(rgb(255 255 255 / 8%), rgb(255 255 255 / 19%));
+  border-radius: 16px;
+  padding: 14px 16px;
+  max-width: 420px;
+}
+
+/* Checkmark icon */
+.pricing-plans .pricing-benefit-check {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing-plans .pricing-benefit-check::after {
+  content: '\2713';
+  color: #2b2b2b;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pricing-plans .pricing-benefit-img {
+  flex-shrink: 0;
+  width: 80px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 1;
+}
+
+.pricing-plans .pricing-benefit-img img {
+  max-width: 80px;
+  max-height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.pricing-plans .pricing-benefit-text {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.4;
+  flex: 1;
+  max-width: 280px;
+}
+
+/* Carousel navigation — sits below the overflow area, always visible */
+.pricing-plans .pricing-carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 0 16px;
+}
+
+.pricing-plans .pricing-carousel-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 30%);
+  background: rgb(255 255 255 / 10%);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.pricing-plans .pricing-carousel-btn:hover {
+  background: rgb(255 255 255 / 20%);
+}
+
+.pricing-plans .pricing-carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Footnote */
+.pricing-plans .pricing-footnote {
+  font-size: 12px;
+  color: var(--tertiary-gray, #999);
+  text-align: left;
+  align-self: flex-start;
+  max-width: 100%;
+}
+
+/* Hidden elements for plan toggle */
+.pricing-plans .hidden {
+  display: none;
+}
+
+/* Responsive — mobile */
+@media (width < 600px) {
+  .pricing-plans-container {
+    padding: 60px 0;
+  }
+
+  .pricing-plans-container .pricing-plans-wrapper {
+    padding: 0 24px;
+  }
+
+  .pricing-plans-container > .default-content-wrapper > h2 {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
+
+  .pricing-plans .pricing-card h4 {
+    font-size: 24px;
+  }
+
+  .pricing-plans .pricing-col-header h3 {
+    font-size: 20px;
+  }
+}
+
+/* Responsive — tablet: side-by-side cards */
+@media (width >= 600px) {
+  .pricing-plans .pricing-cards {
+    flex-direction: row;
+  }
+
+  .pricing-plans .pricing-card {
+    flex: 1;
+  }
+
+  .pricing-plans .pricing-tab {
+    padding: 16px 48px;
+  }
+}
+
+/* Responsive — desktop: two-column layout */
+@media (width >= 900px) {
+  .pricing-plans .pricing-content {
+    flex-direction: row;
+  }
+
+  .pricing-plans .pricing-col-shirts {
+    flex: 3;
+    min-width: 0;
+  }
+
+  .pricing-plans .pricing-col-benefits {
+    flex: 2;
+    min-width: 0;
+  }
+
+  .pricing-plans .pricing-carousel-wrapper {
+    max-height: 480px;
+  }
+
+  .pricing-plans .pricing-card-image img {
+    max-width: 240px;
+  }
 }
