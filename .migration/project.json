@@ -1,4 +1,9 @@
 {
   "type": "xwalk",
-  "contentHostUrl": "author-p62308-e1322112.adobeaemcloud.com"
+  "contentHostUrl": "author-p62308-e1322112.adobeaemcloud.com",
+  "aemSitePath": "/content/madridistas-premium-xwalk",
+  "aemAssetsFolderPath": "/content/dam/madridistas-premium-xwalk",
+  "aemSiteName": "madridistas-premium-xwalk",
+  "aemSiteTitle": "madridistas premium xwalk",
+  "baseUrl": "https://main--madridistas-platinum--adeporra.aem.page/es-es"
 }
