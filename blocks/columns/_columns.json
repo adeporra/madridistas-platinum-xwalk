@@ -33,6 +33,24 @@
           "name": "rows",
           "value": "",
           "label": "Rows"
+        },
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "value": "",
+          "label": "Style",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Effect",
+              "children": [
+                {
+                  "name": "Blur",
+                  "value": "blur"
+                }
+              ]
+            }
+          ]
         }
       ]
     }

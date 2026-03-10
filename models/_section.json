@@ -33,6 +33,10 @@
             {
               "name": "Highlight",
               "value": "highlight"
+            },
+            {
+              "name": "Center",
+              "value": "center"
             }
           ]
         }
@@ -53,6 +57,7 @@
         "form",
         "hero",
         "image",
+        "pricing-plans",
         "quote",
         "search",
         "tabs",

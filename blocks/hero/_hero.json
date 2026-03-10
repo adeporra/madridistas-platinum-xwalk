@@ -40,6 +40,52 @@
           "value": "",
           "label": "Text",
           "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image2",
+          "label": "Image 2",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "image2Alt",
+          "label": "Alt 2",
+          "value": ""
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image3",
+          "label": "Image 3",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "image3Alt",
+          "label": "Alt 3",
+          "value": ""
+        },
+        {
+          "component": "multiselect",
+          "name": "classes",
+          "value": "",
+          "label": "Style",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Position",
+              "children": [
+                {
+                  "name": "Left",
+                  "value": "left"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
