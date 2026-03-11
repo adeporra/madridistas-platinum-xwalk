@@ -3,6 +3,3 @@ mountpoints:
     url: "https://author-p62308-e1322112.adobeaemcloud.com/bin/franklin.delivery/adeporra/madridistas-platinum-xwalk/main"
     type: "markup"
     suffix: ".html"
-  /content/dam:
-    url: "https://author-p62308-e1322112.adobeaemcloud.com/content/dam"
-    type: "media"
