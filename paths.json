@@ -1,8 +1,0 @@
-{
-  "mappings": [
-    "/content/madridistas-premium-xwalk/:/",
-    "/content/dam/madridistas-premium-xwalk/:/",
-    "/content/madridistas-platinum-xwalk/metadata:/metadata.json",
-    "/content/madridistas-premium-xwalk/configuration:/.helix/config.json"
-  ]
-}
